@@ -72,6 +72,9 @@ func (m *Manager) identifyWindowK(winInfo *KWindowInfo) (innerId string, appInfo
 	if title == "下载" {
 		appId = "uos-browser"
 	}
+	if appId == "suwellreader" {
+		appId = "reader"
+	}
 	//+ TODO通过获取wps的Desktop文件来规避无法显示appId的情况,此修改只对wpsoffice应用有影响
 	if appId == "wpsoffice" {
 		//+ 获取GIO_LAUNCHED_DESKTOP_FILE需要写在if逻辑中，不然会导致在pangv机器上打开系统管理器等应用崩溃问题
